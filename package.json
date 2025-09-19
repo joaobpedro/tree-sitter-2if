@@ -1,0 +1,32 @@
+{
+  "name": "tree-sitter-2if",
+  "version": "1.0.0",
+  "description": "Tree-sitter grammar for .2if engineering input files",
+  "main": "bindings/node",
+  "types": "bindings/node",
+  "keywords": [
+    "parser",
+    "tree-sitter",
+    "engineering",
+    "structural-analysis",
+    "2if"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/tree-sitter-2if.git"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "tree-sitter": "^0.20.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.0"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.2if",
+      "file-types": ["2if"]
+    }
+  ]
+}

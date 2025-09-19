@@ -1,0 +1,56 @@
+#-- Header -----------------------------------------------------------------------------------------
+HEAD FIREFLY 800SQ BASE MODEL FOR KONGSBERG 2025 September. WITH BITUMEN
+HEAD Created by LSCNS Kwnagsu Chae
+HEAD Units: mm, MPa, N, Mg, s
+#
+#-- Control info -----------------------------------------------------------------------------------
+#======  NLP---maxIt-convRat---seaDen-------gAcc-----avgTen-----------------------------------------
+CONTROL  999    300   1.0E-5  1025.0E-9     9.81        -10
+#======== id
+FRICMODEL 1
+#======== angle
+ROTATE    0
+#======== length
+DISPLACE  0
+#
+#-- Cross-section definitions ----------------------------------------------------------------------
+#==== n-name-----------process---------N--------Lp-----R------theta-elemType---geomName----matName--
+CROSS 1 CS_OSHEATH    CS_OSHEATH       1       0.0    0.0     0.0  SHELL      OSHEATH     MAT_HDPE
+CROSS 1 CS_YARN_3     CS_YARN_3       114   -500.0   99.080   0.0  BEAM       YARN_3      MAT_YARN
+#
+#-- Geometry definitions ---------------------------------------------------------------------------
+#=== geomName------form------Y0-----Z0---curvType--P1--------P2-------r---thickness-nDiv-interfaceNo
+GEOM OSHEATH       CLOSED     0      0    CI       0        360     104.180   4.00   196    1
+#
+GEOM YARN_3      CLOSED     0      0    CI       0          360       1.00    0       16    1
+#
+#-- Material laws ----------------------------------------------------------------------------------
+#======= materialName-type------nu----density--thermCoeff-thermCond--heatCap----E-mod---Beta-matCode
+MATERIAL MAT_XLPE     LINEAR    0.45   948E-9  0.0        0.0        0.0       304.0   0   AUTO
+MATERIAL MAT_HDPE     LINEAR    0.45   948E-9  0.0        0.0        0.0       883.0   0   AUTO
+#
+#-- Boundary conditions and loads ------------------------------------------------------------------
+#==== DOF ------------------------------------------------------------------------------------------
+GLBON  2
+GLBON  3
+GLBON  6
+#======== -----------------DOF--------value------historyNo---------------------------------------
+GCLOAD                      1          1000           150
+#======== -----------------DOF-----------value------historyNo---------------------------------------
+GPDISP                      5         2.85E-04        200
+#
+#-- Time history definitions -----------------------------------------------------------------------
+HIST   150
+         1      0.0000000
+        10      10.000000
+        30      10.000000
+#
+HIST   200
+         1      0.0000000
+        10      0.0000000
+        30      1.0000000
+#
+TIME           10            200
+#-- Post-processing --------------------------------------------------------------------------------
+VISRES SIGMA-VM SIGMA-CONTACT SIGMA-RADIAL SIGMA-FRICTION STRA-FRICTION CURV-SLIP
+#-- End of file ------------------------------------------------------------------------------------

@@ -1,0 +1,491 @@
+[
+  {
+    "type": "contint_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "control_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "cross_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "displace_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "fricmodel_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "gcload_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "geom_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "geom_params",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "geom_params",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "glbon_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "gpdisp_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "head_command",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "hist_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "hist_entry",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "hist_entry",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "lmerge_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "material_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "number",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "rotate_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "smerge_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "contint_command",
+          "named": true
+        },
+        {
+          "type": "control_command",
+          "named": true
+        },
+        {
+          "type": "cross_command",
+          "named": true
+        },
+        {
+          "type": "displace_command",
+          "named": true
+        },
+        {
+          "type": "fricmodel_command",
+          "named": true
+        },
+        {
+          "type": "gcload_command",
+          "named": true
+        },
+        {
+          "type": "geom_command",
+          "named": true
+        },
+        {
+          "type": "glbon_command",
+          "named": true
+        },
+        {
+          "type": "gpdisp_command",
+          "named": true
+        },
+        {
+          "type": "head_command",
+          "named": true
+        },
+        {
+          "type": "hist_command",
+          "named": true
+        },
+        {
+          "type": "lmerge_command",
+          "named": true
+        },
+        {
+          "type": "material_command",
+          "named": true
+        },
+        {
+          "type": "rotate_command",
+          "named": true
+        },
+        {
+          "type": "smerge_command",
+          "named": true
+        },
+        {
+          "type": "time_command",
+          "named": true
+        },
+        {
+          "type": "visres_command",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "time_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "visres_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "AUTO",
+    "named": false
+  },
+  {
+    "type": "CI",
+    "named": false
+  },
+  {
+    "type": "CLOSED",
+    "named": false
+  },
+  {
+    "type": "CO",
+    "named": false
+  },
+  {
+    "type": "CONTINT",
+    "named": false
+  },
+  {
+    "type": "CONTROL",
+    "named": false
+  },
+  {
+    "type": "CROSS",
+    "named": false
+  },
+  {
+    "type": "DISPLACE",
+    "named": false
+  },
+  {
+    "type": "FRICMODEL",
+    "named": false
+  },
+  {
+    "type": "GCLOAD",
+    "named": false
+  },
+  {
+    "type": "GEOM",
+    "named": false
+  },
+  {
+    "type": "GLBON",
+    "named": false
+  },
+  {
+    "type": "GPDISP",
+    "named": false
+  },
+  {
+    "type": "HEAD",
+    "named": false
+  },
+  {
+    "type": "HIST",
+    "named": false
+  },
+  {
+    "type": "LINEAR",
+    "named": false
+  },
+  {
+    "type": "LMERGE",
+    "named": false
+  },
+  {
+    "type": "MATERIAL",
+    "named": false
+  },
+  {
+    "type": "NONLINEAR",
+    "named": false
+  },
+  {
+    "type": "OPEN",
+    "named": false
+  },
+  {
+    "type": "ROTATE",
+    "named": false
+  },
+  {
+    "type": "SMERGE",
+    "named": false
+  },
+  {
+    "type": "TIME",
+    "named": false
+  },
+  {
+    "type": "VISRES",
+    "named": false
+  },
+  {
+    "type": "comment",
+    "named": true,
+    "extra": true
+  },
+  {
+    "type": "identifier",
+    "named": true
+  }
+]

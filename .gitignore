@@ -1,0 +1,41 @@
+# Tree-sitter generated files
+src/parser.c
+src/tree_sitter/
+*.o
+*.obj
+*.lib
+*.exp
+*.dll
+*.so
+*.dylib
+
+# Node modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build directories
+build/
+dist/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+*.tmp
+*.temp
+desktop.ini
