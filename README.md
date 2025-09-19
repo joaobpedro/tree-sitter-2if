@@ -50,18 +50,57 @@ This grammar supports parsing:
    tree-sitter parse test/example.2if
    ```
 
-## Neovim Installation Guide
+## Installation
 
-### Step 1: Copy Your Parser Files
+### Method 1: From GitHub (Recommended)
 
-First, find your Neovim data directory:
-```lua
--- In Neovim, run:
-:echo stdpath('data')
--- This will show something like: C:\Users\[username]\AppData\Local\nvim-data
-```
+1. **Add parser configuration to your Neovim config (`init.lua`):**
+   ```lua
+   -- Set up filetype detection for .2if files
+   vim.filetype.add({
+     extension = {
+       ['2if'] = '2if',
+     }
+   })
 
-### Step 2: Manual Installation (Recommended)
+   -- Configure nvim-treesitter
+   require'nvim-treesitter.configs'.setup {
+     ensure_installed = { "c", "lua", "vim", "vimdoc" }, -- your other parsers
+     
+     highlight = {
+       enable = true,
+       additional_vim_regex_highlighting = false,
+     },
+   }
+
+   -- Register the custom parser for 2if files
+   local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+   parser_config.twoif = {
+     install_info = {
+       url = "https://github.com/YOUR_USERNAME/tree-sitter-2if.git", -- Replace with your GitHub URL
+       files = {"src/parser.c"},
+       branch = "main",
+       generate_requires_npm = false,
+     },
+     filetype = "2if",
+     used_by = {"2if"},
+   }
+   ```
+
+2. **Install the parser in Neovim:**
+   ```vim
+   :TSInstall twoif
+   ```
+
+3. **Copy highlight queries (if needed):**
+   The queries should be automatically available, but if not:
+   ```bash
+   mkdir -p ~/.config/nvim/queries/twoif
+   # Download queries/highlights.scm from the repository
+   # Save it as ~/.config/nvim/queries/twoif/highlights.scm
+   ```
+
+### Method 2: Manual Installation (Development)
 
 1. **Create the parser directory structure:**
    ```bash
@@ -191,7 +230,7 @@ If you want to use a Git repository instead:
 1. **Push your tree-sitter-2if to GitHub/GitLab**
 2. **Update the parser config:**
    ```lua
-   parser_config['2if'] = {
+   parser_config.twoif = {
      install_info = {
        url = "https://github.com/yourusername/tree-sitter-2if.git",
        files = {"src/parser.c"},
@@ -201,7 +240,49 @@ If you want to use a Git repository instead:
      filetype = "2if",
    }
    ```
-3. **Install:** `:TSInstall 2if`
+3. **Install:** `:TSInstall twoif`
+
+## Contributing
+
+Contributions are welcome! This tree-sitter grammar supports the .2if file format commonly used in marine engineering applications.
+
+### Development Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/tree-sitter-2if.git
+   cd tree-sitter-2if
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install -g tree-sitter-cli
+   ```
+
+3. **Generate and test:**
+   ```bash
+   tree-sitter generate
+   tree-sitter parse test/example.2if
+   ```
+
+### Adding New Features
+
+- **Grammar rules:** Edit `grammar.js`
+- **Syntax highlighting:** Edit `queries/highlights.scm`
+- **Test cases:** Add examples to `test/`
+
+### File Format Support
+
+Currently supports:
+- ✅ Comments (`#`)
+- ✅ Command keywords (HEAD, CONTROL, CROSS, GEOM, MATERIAL, etc.)
+- ✅ Numbers (integers, floats, scientific notation)
+- ✅ Identifiers and string literals
+- ✅ Multi-line constructs
+
+## License
+
+MIT License - Feel free to use and modify for your projects!
 
 ### Troubleshooting
 
